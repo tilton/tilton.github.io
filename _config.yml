@@ -21,12 +21,12 @@ footer-links:
   email:
   facebook:
   flickr:
-  github: barryclark/jekyll-now
+  github: tilton
   instagram:
   linkedin:
   pinterest:
   rss: # just type anything here for a working RSS icon
-  twitter: jekyllrb
+  twitter: tilton
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   youtube: # channel/<your_long_string> or user/<user-name>
   googleplus: # anything in your profile username that comes after plus.google.com/
@@ -68,9 +68,18 @@ kramdown:
     # Use existing pygments syntax highlighting css
     css_class: 'highlight'
 
-# Set the Sass partials directory, as we're using @imports
+compress_html:
+  clippings: all
+  comments: [""]
+  endings: [html, head, body, li, dt, dd, rt, rp, optgroup, option, colgroup, caption, thead, tbody, tfoot, tr, td, th]
+  profile: false
+  blanklines: false
+  ignore:
+    envs: []
+
 sass:
-  style: :expanded # You might prefer to minify using :compressed
+  sass_dir: css
+  style:    compressed
 
 # Use the following plug-ins
 gems:
