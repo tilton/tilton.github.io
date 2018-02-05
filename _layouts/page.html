@@ -1,28 +1,15 @@
 ---
-layout: compress
+layout: default
 ---
 
-{% include head.html %}
+<article class="page entry" itemscope itemtype="http://schema.org/CreativeWork">
 
-    <div class="main-container">
+  <header class="entry-header">
+    <h1 class="entry-title" itemprop="headline">{{ page.title }}</h1>
+  </header>
 
-        {% include header.html %}
+  <div class="entry-content" itemprop="text">
+    {{ content }}
+  </div>
 
-        <div class="inner-container">
-
-            <article>
-
-                <h1>{{ page.title }}</h1>
-
-                {{ content }}
-
-            </article>
-
-            {% include footer.html %}
-
-        </div>
-
-    </div>
-
-</body>
-</html>
+</article>

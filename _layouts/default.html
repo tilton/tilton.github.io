@@ -2,23 +2,40 @@
 layout: compress
 ---
 
-{% include head.html %}
+<!doctype html>
+<html lang="en">
 
-    <div class="main-container">
+  {% include head.html %}
 
-        {% include header.html %}
+  <body {% if page.url == '/' %}class="home" {% elsif page.url contains '/blog/' or page.layout == 'archive' %}class="archive" {% endif %}itemscope itemtype="http://schema.org/WebPage">
 
-        <div class="inner-container">
+    <div class="site-container">
 
-            <h1>{{ page.title }}</h1>
+      <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+      <![endif]-->
 
-            {{ content }}
+      {% include header.html %}
 
-            {% include footer.html %}
+      <div class="site-inner">
 
-        </div>
+        <main class="content">
+          {{ content }}
+        </main>
+
+        {% if page.sidebar_option == 'sidebar' %}{% include sidebar.html %}{% endif %}
+
+      </div>
+
+      {% include footer-widgets.html %}
+      {% include footer.html %}
+
+      <!-- <script async src='{{ site.url }}/js/theme.min.js'></script> -->
+      <script async src='{{ site.url }}/js/jquery-2.2.4.min.js'></script>
+      <script async src='{{ site.url }}/js/responsive-menu.js'></script>
 
     </div>
 
-</body>
+  </body>
+
 </html>
